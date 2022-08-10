@@ -13,3 +13,11 @@ cilium hubble port-forward&
 hubble status
 cilium hubble ui
 ```
+
+## commands
+```
+hubble status
+hubble list nodes
+hubble observe –namespace backend –protocol dns
+hubble observe –namespace frontend –http-path jobs
+```
