@@ -10,14 +10,14 @@ https://catalog.redhat.com/software/operators/search?q=cilium
 
 ## quickstart
 
-### setup a Kubernetes cluster with [kind](kind.md)
+setup a Kubernetes cluster with [kind](kind.md)
 
-### install [cilium](cilium.md)
+install [cilium](cilium.md)
 
-### setup [hubble](hubble.md)
+setup [hubble](hubble.md)
 
-### apply [network policies](network-policies.md)
+apply [network policies](network-policies.md)
 
-### setup [cluster mesh](cluster-mesh.md)
+setup [cluster mesh](cluster-mesh.md)
 
 
