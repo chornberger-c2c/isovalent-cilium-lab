@@ -14,3 +14,10 @@ kubectl get cm cilium-config -o yaml -n kube-system
 kubectl get all -n kube-system
 cilium connectivity test
 ```
+
+## commands
+
+get cilium endpoints
+```
+kubectl get cep -A 
+```
