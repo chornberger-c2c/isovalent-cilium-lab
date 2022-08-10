@@ -18,4 +18,6 @@ setup [hubble](hubble.md)
 
 apply [network policies](network-policies.md)
 
+look at [observability](workflow-visualize-adapt.md)
+
 setup [cluster mesh](cluster-mesh.md)
