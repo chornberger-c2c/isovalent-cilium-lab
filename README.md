@@ -2,9 +2,16 @@
 
 ## Documentation
 
+
+**Network policy editor**
+
 https://editor.cilium.io
 
+**Installation instructions by Isovalent**
+
 https://github.com/cilium/installfest
+
+**Operator for Red Hat OpenShift**
 
 https://catalog.redhat.com/software/operators/search?q=cilium
 
