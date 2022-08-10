@@ -8,7 +8,19 @@ kubectl exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://kubernetes.i
 hubble observe -o jsonpb --last 1000 > flows.json
 ```
 
-WebUI of https://editor.cilium.io: Upload flow, add rule, download policy
+## Use flows in editor’s WebUI
+
+Upload flows.json to https://editor.cilium.io
+
+=> “Add rule” 
+
+=> set a policy name (editor icon in the middle)
+
+=> Download cilium network policy
+
+## Now there is zero-trust by default
+
+Apply locally
 
 ```
 kubectl apply -f policy.yaml
@@ -24,12 +36,14 @@ kubectl exec -ti ${BACKEND} -- curl -L https://golem.de
 ## Create flows
 
 ```
-hubble observe -o jsonpb --last 1000 > flows.json
+hubble observe -o jsonpb --last 1000 > flows-2.json
 ```
+
+## Use network policy editor
 
 Use flows in editor’s WebUI
 
-Upload flows.json in https://editor.cilium.io
+Upload flows.json to https://editor.cilium.io
 
 => “Add rule” 
 
@@ -37,7 +51,7 @@ Upload flows.json in https://editor.cilium.io
 
 => Download cilium network policy
 
-=> Create kubernetes object from policy
+## Create kubernetes object from policy
 
 backend-golem.de.yaml
 ```
