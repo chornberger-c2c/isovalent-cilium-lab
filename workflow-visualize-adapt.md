@@ -1,0 +1,75 @@
+# Workflow to visualize and adapt rules
+
+## Concept of zero-trust
+
+```
+kubectl exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://cilium.io | head -1
+kubectl exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://kubernetes.io | head -1
+hubble observe -o jsonpb --last 1000 > flows.json
+```
+
+WebUI of https://editor.cilium.io: Upload flow, add rule, download policy
+
+```
+kubectl apply -f policy.yaml
+```
+Try access
+
+```
+kubectl exec -ti ${BACKEND} -- curl -L https://golem.de
+```
+
+=> won’t work 
+
+## Create flows
+
+```
+hubble observe -o jsonpb --last 1000 > flows.json
+```
+
+Use flows in editor’s WebUI
+
+Upload flows.json in https://editor.cilium.io
+
+=> “Add rule” 
+
+=> set a policy name (editor icon in the middle)
+
+=> Download cilium network policy
+
+=> Create kubernetes object from policy
+
+backend-golem.de.yaml
+```
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: backend-golem.de
+  namespace: default
+spec:
+  endpointSelector:
+    matchLabels:
+      app: backend
+  ingress:
+    - fromEndpoints:
+        - matchLabels:
+            app: frontend
+  egress:
+    - toFQDNs:
+        - matchName: golem.de
+      toPorts:
+        - ports:
+            - port: "443"
+```
+
+Apply locally
+```
+kubectl create -f backend-golem.de.yaml
+```
+
+Verify changes
+
+```
+kubectl exec -ti ${BACKEND} -- curl -L https://golem.de
+```
+=> works!
