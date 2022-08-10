@@ -41,8 +41,6 @@ hubble observe -o jsonpb --last 1000 > flows-2.json
 
 ## Use network policy editor
 
-Use flows in editor’s WebUI
-
 Upload flows.json to https://editor.cilium.io
 
 => “Add rule” 
