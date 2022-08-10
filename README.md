@@ -1,6 +1,6 @@
 # isovalent-cilium-lab
 
-see also
+useful links:
 
 https://editor.cilium.io
 
