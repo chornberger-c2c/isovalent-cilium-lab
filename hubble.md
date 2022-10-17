@@ -9,7 +9,7 @@ tar xzvfC hubble-linux-amd64.tar.gz ~/bin/
 ## setup 
 ```
 cilium hubble enable --ui --wait=false
-cilium hubble port-forward&
+cilium hubble port-forward
 hubble status
 cilium hubble ui
 ```
