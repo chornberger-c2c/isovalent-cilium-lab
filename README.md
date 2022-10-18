@@ -2,14 +2,17 @@
 
 ## Documentation
 
+**Cilium labs by Isovalent**
 
-**Network policy editor**
-
-https://editor.cilium.io
+https://isovalent.com/labs/
 
 **Installation instructions by Isovalent**
 
 https://github.com/cilium/installfest
+
+**Network policy editor**
+
+https://editor.cilium.io
 
 **Operator for Red Hat OpenShift**
 
