@@ -6,7 +6,7 @@
 
 ## About
 
-The purpose of this lab is to get you acquainted with [Cilium](https://cilium.io/get-started/), [Hubble](https://github.com/cilium/hubble), the Network Policy Editor and a typical workflow on a locally provisioned Kubernetes cluster.
+The purpose of this lab is to get you acquainted with [Cilium](https://cilium.io/get-started/), [Hubble](https://github.com/cilium/hubble), the [Network Policy Editor](https://editor.cilium.io/) and a typical workflow on a locally provisioned Kubernetes cluster.
 
 ## What problem does Cilium solve?
 
