@@ -10,6 +10,20 @@ This allows for observability and security features without sidecar-containers.
 
 Ephemeral Pods' IP addresses are not helpful - they are impossible to track going back in time - so here labels are used to identify traffic to and from endpoints.
 
+## Lab Quickstart
+
+1. Setup a local Kubernetes cluster with [kind](kind.md)
+
+2. Install [cilium](cilium.md)
+
+3. Setup [hubble](hubble.md)
+
+4. Apply [network policies](network-policies.md)
+
+5. Look at [observability](workflow-visualize-adapt.md)
+
+6. Setup [cluster mesh](cluster-mesh.md)
+
 ## Reference
 
 ### Getting started
@@ -26,26 +40,13 @@ https://isovalent.com/labs/
 
 ### Network policy editor
 
-To edit your network policies interactively, go to
+To edit your network policies interactively visit:
 
 https://editor.cilium.io
 
 ### Operator for Red Hat OpenShift
 
-You can also install Cilium into OpenShift Container Platform by using the operator
+You can also install Cilium as well as Isovalent Cilium Enterprise into an OpenShift Container Platform by using the operator.
 
 https://catalog.redhat.com/software/operators/search?q=cilium
 
-## Lab Quickstart
-
-1. Setup a local Kubernetes cluster with [kind](kind.md)
-
-2. Install [cilium](cilium.md)
-
-3. Setup [hubble](hubble.md)
-
-4. Apply [network policies](network-policies.md)
-
-5. Look at [observability](workflow-visualize-adapt.md)
-
-6. Setup [cluster mesh](cluster-mesh.md)
