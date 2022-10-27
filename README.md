@@ -10,7 +10,7 @@ The purpose of this lab is to get you acquainted with [Cilium](https://cilium.io
 
 ## What problem does Cilium solve?
 
-Cilium can load code into the Kernel via [eBPF](https://ebpf.io/) (extended Berekely Packet Filter).
+Cilium can load code into the Kernel via [eBPF](https://ebpf.io/) (extended Berkeley Packet Filter).
 
 The host Kernel - shared by all containers running on the same system - can now be programmed.
 
