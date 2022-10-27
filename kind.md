@@ -11,4 +11,9 @@
  kubectl get all 
  kubectl get pods -A
  kubectl config current-context
+
+```
+## kubeconfig
+```
+kind get kubeconfig > ~/.kube/config
 ```
