@@ -1,12 +1,16 @@
-# isovalent-cilium-lab
+# Quickstart to Cilium
+1. [About](#about)
+2. [What problem does Cilium solve](#what-problem-does-cilium-solve)
+3. [Lab Quickstart](#lab-quickstart)
+4. [Reference](#reference)
 
 ## About
 
-The purpose of this lab is to get you acquainted with Cilium, Hubble, the Network Policy Editor and a typical workflow on a locally provisioned Kubernetes cluster.
+The purpose of this lab is to get you acquainted with [Cilium](https://cilium.io/get-started/), [Hubble](https://github.com/cilium/hubble), the Network Policy Editor and a typical workflow on a locally provisioned Kubernetes cluster.
 
 ## What problem does Cilium solve?
 
-Cilium can load code into the Kernel via eBPF (extended Berekely Packet Filter).
+Cilium can load code into the Kernel via [eBPF](https://ebpf.io/) (extended Berekely Packet Filter).
 
 The host Kernel - shared by all containers running on the same system - can now be programmed.
 
