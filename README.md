@@ -1,5 +1,9 @@
 # isovalent-cilium-lab
 
+## About
+
+The purpose of this lab is to get you acquainted with Cilium, Hubble, the Network Policy Editor and a typical workflow on a locally provisioned Kubernetes cluster.
+
 ## What problem does Cilium solve?
 
 Cilium can load code into the Kernel via eBPF (extended Berekely Packet Filter).
@@ -12,7 +16,6 @@ Ephemeral Pods' IP addresses are not helpful - they are impossible to track goin
 
 ## Lab Quickstart
 
-The purpose of this lab is to get you acquainted with Cilium, Hubble, the Network Policy Editor and a typical workflow on a locally provisioned Kubernetes cluster.
 
 1. Setup a local Kubernetes cluster with [kind](kind.md)
 
