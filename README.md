@@ -12,6 +12,8 @@ Ephemeral Pods' IP addresses are not helpful - they are impossible to track goin
 
 ## Lab Quickstart
 
+The purpose of this lab is to get you acquainted with Cilium, Hubble, the Network Policy Editor and a typical workflow on a locally provisioned Kubernetes cluster.
+
 1. Setup a local Kubernetes cluster with [kind](kind.md)
 
 2. Install [cilium](cilium.md)
