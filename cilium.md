@@ -5,7 +5,7 @@ sha256sum --check cilium-linux-amd64.tar.gz.sha256sum
 tar xzvfC cilium-linux-amd64.tar.gz ~/bin/
 ```
 
-## setup
+## Setup
 ```
 cilium version
 cilium install
@@ -15,9 +15,13 @@ kubectl get all -n kube-system
 cilium connectivity test
 ```
 
-## commands
+## Commands
 
 get cilium endpoints
 ```
 kubectl get cep -A 
 ```
+
+## Documentation
+
+https://docs.cilium.io/en/v1.12/
