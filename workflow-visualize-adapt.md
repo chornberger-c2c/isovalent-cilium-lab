@@ -3,6 +3,7 @@
 ## Concept of zero-trust
 
 ```
+BACKEND=$(kubectl get pods -n cilium-test -o jsonpath='{.items[0].metadata.name}')
 kubectl exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://cilium.io | head -1
 kubectl exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://kubernetes.io | head -1
 hubble observe -o jsonpb --last 1000 > flows.json
