@@ -6,7 +6,7 @@ sha256sum --check hubble-linux-amd64.tar.gz.sha256sum
 tar xzvfC hubble-linux-amd64.tar.gz ~/bin/
 ```
 
-## setup 
+## Setup 
 ```
 cilium hubble enable --ui --wait=false
 cilium hubble port-forward
@@ -14,7 +14,7 @@ hubble status
 cilium hubble ui
 ```
 
-## commands
+## Commands
 status
 ```
 hubble status
@@ -30,3 +30,7 @@ flows output as json
 hubble observe -o jsonpb --last 1000 --follow | tee -a flows.json
 hubble observe -o jsonpb --last 1000 > flows.json
 ```
+
+## Documentation
+
+https://docs.cilium.io/en/v1.12/gettingstarted/hubble/
