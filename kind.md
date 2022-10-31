@@ -5,7 +5,7 @@
   mv kind ~/bin
 ```
 
-## setup
+## Setup
 ``` 
  kind create cluster
  kubectl get all 
@@ -13,7 +13,11 @@
  kubectl config current-context
 
 ```
-## kubeconfig
+## Kubeconfig
 ```
 kind get kubeconfig > ~/.kube/config
 ```
+
+## Documentation
+
+https://kind.sigs.k8s.io/docs/user/quick-start/
