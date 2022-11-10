@@ -51,12 +51,12 @@ spec:
 
 or go to https://editor.cilium.io and do it manually
 
-[pictures/editor-cilium-io-1.png]
+![create policy](pictures/editor-cilium-io-1.png)
 
 * "Create new policy" (empty page bottom left)
 * "Edit" icon in the middle of the page => enter a namespace and a policy name
 
-[pictures/editor-cilium-io-2.png]
+![deny egress](pictures/editor-cilium-io-2.png)
 
 * "Egress default deny"
 * "Allow Kubernetes DNS"
@@ -111,7 +111,7 @@ spec:
 
 or go to https://editor.cilium.io and do it manually
 
-[pictures/editor-cilium-io-3.png]
+![upload flows and add rule](pictures/editor-cilium-io-3.png)
 
 * Upload Flows
 * Add Rule
