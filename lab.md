@@ -11,8 +11,8 @@ kind create cluster --name cilium-demo
 ```
 cilium install  
 cilium hubble enable --ui
-cilium hubble port-forward
-cilium hubble ui  
+cilium hubble port-forward &
+cilium hubble ui &
 cilium connectivity test
 ```
 => this creates namespace cilium-test which we will use later on!
@@ -21,7 +21,7 @@ cilium connectivity test
 
 ```
 BACKEND=$(kubectl get pods -n cilium-test -o jsonpath='{.items[0].metadata.name}')
-kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://kubernetes.io | head -1
+kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://cilium.io | head -1
 HTTP/2 200
 ```
 
@@ -31,16 +31,10 @@ HTTP/2 200
 apiVersion: cilium.io/v2
 kind: CiliumNetworkPolicy
 metadata:
-  name: policy-test
+  name: cilium-test
   namespace: cilium-test
 spec:
-  endpointSelector:
-    matchLabels:
-      kind: client
-  ingress:
-    - fromEndpoints:
-        - matchLabels:
-            app: prometheus
+  endpointSelector: {}
   egress:
     - toEndpoints:
         - matchLabels:
@@ -54,16 +48,33 @@ spec:
             dns:
               - matchPattern: "*"
 ```
+
+or go to https://editor.cilium.io and do it manually
+
+[pictures/editor-cilium-io-1.png]
+
+* "Create new policy" (empty page bottom left)
+* "Edit" icon in the middle of the page => enter a namespace and a policy name
+
+[pictures/editor-cilium-io-2.png]
+
+* "Egress default deny"
+* "Allow Kubernetes DNS"
+* "Download" policy
+
+
+
+Apply locally
 ```
-kubectl apply -f policy-test.yaml 
+kubectl apply -f cilium-test.yaml 
 ```
 
 Observe
 ```
-hubble observe --output jsonpb --last 1000  > backend-kubernetes-1.json
-kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://kubernetes.io | head -1
+kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://cilium.io | head -1
 curl: (28) Connection timeout after 5001 ms
 command terminated with exit code 28
+hubble observe --output jsonpb --last 1000  > backend-cilium-io.json
 ```
 => won't work, as we have zero-trust by default
 
@@ -75,16 +86,10 @@ command terminated with exit code 28
 apiVersion: cilium.io/v2
 kind: CiliumNetworkPolicy
 metadata:
-  name: policy-test
+  name: cilium-test
   namespace: cilium-test
 spec:
-  endpointSelector:
-    matchLabels:
-      kind: client
-  ingress:
-    - fromEndpoints:
-        - matchLabels:
-            app: prometheus
+  endpointSelector: {}
   egress:
     - toEndpoints:
         - matchLabels:
@@ -98,26 +103,36 @@ spec:
             dns:
               - matchPattern: "*"
     - toFQDNs:
-        - matchName: kubernetes.io
+        - matchName: cilium.io
       toPorts:
         - ports:
             - port: "443"
 ```
+
+or go to https://editor.cilium.io and do it manually
+
+[pictures/editor-cilium-io-3.png]
+
+* Upload Flows
+* Add Rule
+* Download 
+
+Apply locally
 ```
-kubectl apply -f policy-test-1.yaml
+kubectl apply -f cilium-test-2.yaml
 ```
 
 ## Verify
 
 ```
-kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://cilium.io | head -1
+kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://kubernetes.io | head -1
 curl: (28) Connection timeout after 5001 ms
 command terminated with exit code 28
 ```
 => doesn't work
 
 ```
-kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://kubernetes.io | head -1
+kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://cilium.io | head -1
 HTTP/2 200
 ```
 => works!
