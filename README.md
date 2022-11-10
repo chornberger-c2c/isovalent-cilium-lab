@@ -27,13 +27,9 @@ Ephemeral Pods' IP addresses are not helpful - they are impossible to track goin
 
 3. Setup [hubble](hubble.md)
 
-4. Apply [network policies](network-policies.md)
+4. Do the full exercise in the [lab](lab.md)
 
-5. Look at [observability](workflow-visualize-adapt.md)
-
-6. Setup [cluster mesh](cluster-mesh.md)
-
-7. Do the full exercise in the [lab](lab.md)
+5. Setup [cluster mesh](cluster-mesh.md)
 
 ## Reference
 
