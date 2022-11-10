@@ -21,6 +21,10 @@ get cilium endpoints
 ```
 kubectl get cep -A 
 ```
+get cilium network policies
+```
+kubectl get ciliumnetworkpolicy.cilium.io -A
+```
 
 ## Documentation
 
