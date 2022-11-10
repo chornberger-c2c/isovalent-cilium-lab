@@ -117,6 +117,8 @@ or go to https://editor.cilium.io and do it manually
 * Add Rule
 * Download 
 
+![rule added](pictures/editor-cilium-io-4.png)
+
 Apply locally
 ```
 kubectl apply -f cilium-test-2.yaml
