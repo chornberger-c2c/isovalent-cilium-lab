@@ -3,7 +3,7 @@
 ## Create a cluster with kind
 
 ```
-kind create cluster --name ist3-demo-2
+kind create cluster --name cilium-demo
 ```
 
 ## Install and setup Cilium with Hubble
