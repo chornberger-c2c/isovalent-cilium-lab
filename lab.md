@@ -58,9 +58,9 @@ or go to https://editor.cilium.io and do it manually
 
 ![deny egress](pictures/editor-cilium-io-2.png)
 
-* "Egress default deny"
+* "Egress Default Deny"
 * "Allow Kubernetes DNS"
-* "Download" policy
+* "Download"
 
 
 
