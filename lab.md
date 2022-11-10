@@ -25,7 +25,7 @@ kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https
 HTTP/2 200
 ```
 
-## Apply a first policy
+## Apply a first policy for zero trust
 
 ```
 apiVersion: cilium.io/v2
