@@ -14,7 +14,7 @@ Cilium can load code into the Kernel via [eBPF](https://ebpf.io/) (extended Berk
 
 The host Kernel - shared by all containers running on the same system - can now be programmed.
 
-This allows for observability and security features without sidecar-containers.
+This allows for observability and security features without sidecar containers.
 
 Ephemeral Pods' IP addresses are not helpful - they are impossible to track going back in time - so here labels are used to identify traffic to and from endpoints.
 
