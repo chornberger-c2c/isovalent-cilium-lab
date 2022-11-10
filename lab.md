@@ -113,9 +113,9 @@ or go to https://editor.cilium.io and do it manually
 
 ![upload flows and add rule](pictures/editor-cilium-io-3.png)
 
-* Upload Flows
-* Add Rule
-* Download 
+* "Flows upload"
+* "Add rule"
+* "Download" 
 
 ![rule added](pictures/editor-cilium-io-4.png)
 
