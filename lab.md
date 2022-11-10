@@ -79,7 +79,7 @@ hubble observe --output jsonpb --last 1000  > backend-cilium-io.json
 => won't work, as we have zero-trust by default
 
 
-## Apply new rule that allows access to kubernetes.io
+## Apply new rule that allows access to cilium.io
 
 
 ```
