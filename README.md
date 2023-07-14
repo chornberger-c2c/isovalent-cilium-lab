@@ -20,16 +20,9 @@ Ephemeral Pods' IP addresses are not helpful - they are impossible to track goin
 
 ## Lab Quickstart
 
+In this lab, we will setup some network policies and observe the network traffic going out of a Kubernetes cluster.
 
-1. Setup a local Kubernetes cluster with [kind](kind.md)
-
-2. Install [cilium](cilium.md)
-
-3. Setup [hubble](hubble.md)
-
-4. Do the full exercise in the [lab](lab.md)
-
-5. Setup [cluster mesh](cluster-mesh.md)
+Please start [here](lab.md) directly.
 
 ## Reference
 
@@ -43,7 +36,7 @@ https://cilium.io/get-started/
 
 Here you can have a hands-on experience with a set of featured labs, including topics like "Introduction to eBPF" as well as BGP, Tetragon, IPSec and WireGuard.
 
-https://isovalent.com/labs/
+https://isovalent.com/resource-library/labs/
 
 ### Network policy editor
 
@@ -53,7 +46,6 @@ https://editor.cilium.io
 
 ### Operator for Red Hat OpenShift
 
-You can also install Cilium as well as Isovalent Cilium Enterprise into an OpenShift Container Platform by using the operator.
+You can also install Cilium into an OpenShift Container Platform by using the operator.
 
-https://catalog.redhat.com/software/operators/search?q=cilium
-
+https://catalog.redhat.com/software/container-stacks/detail/60423ec2c00b1279ffe35a68

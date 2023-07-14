@@ -2,11 +2,27 @@
 
 ## Create a cluster with kind
 
+### Prerequisites 
+
+If not done already, please follow the instructions to install [kind](kind.md).
+
+### Outcome
+
+You will have a local Kubernetes cluster, running inside a container.
+
 ```
 kind create cluster --name cilium-demo
 ```
 
 ## Install and setup Cilium with Hubble
+
+### Prerequisites 
+
+If not done already, please follow the instructions to get the [cilium](cilium.md) and [hubble](hubble.md) utilities.
+
+### Outcome
+
+Cilium and hubble will be installed on this local Kubernetes cluster.
 
 ```
 cilium install  
@@ -17,7 +33,9 @@ cilium connectivity test
 ```
 => this creates namespace cilium-test which we will use later on!
 
-## Requests should work to world on 443/tcp
+## Verify that all outgoing requests work
+
+We test the connection from the first pod in namespace cilium-test to https://cilium.io and get a positive return code.
 
 ```
 BACKEND=$(kubectl get pods -n cilium-test -o jsonpath='{.items[0].metadata.name}')
@@ -69,14 +87,14 @@ Apply locally
 kubectl apply -f cilium-test.yaml 
 ```
 
-Observe
+Observe the change
 ```
 kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://cilium.io | head -1
 curl: (28) Connection timeout after 5001 ms
 command terminated with exit code 28
 hubble observe --output jsonpb --last 1000  > backend-cilium-io.json
 ```
-=> won't work, as we have zero-trust by default
+=> the connection won't work, as we configured "Egress Default Deny" in our policy
 
 
 ## Apply new rule that allows access to cilium.io
@@ -131,10 +149,10 @@ kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https
 curl: (28) Connection timeout after 5001 ms
 command terminated with exit code 28
 ```
-=> doesn't work
+=> timeout indicates that the connection doesn't work
 
 ```
 kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://cilium.io | head -1
 HTTP/2 200
 ```
-=> works!
+=> positive return code shows that the connection works
