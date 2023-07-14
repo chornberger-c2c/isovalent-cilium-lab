@@ -31,7 +31,7 @@ cilium hubble port-forward &
 cilium hubble ui &
 cilium connectivity test
 ```
-=> this creates namespace cilium-test which we will use later on!
+=> This creates namespace cilium-test which we will use later on!
 
 ## Verify that outgoing requests work
 
@@ -94,7 +94,7 @@ curl: (28) Connection timeout after 5001 ms
 command terminated with exit code 28
 hubble observe --output jsonpb --last 1000  > backend-cilium-io.json
 ```
-=> the connection to https://cilium.io won't work, as we configured "Egress Default Deny" in our first policy.
+=> The connection to https://cilium.io won't work, as we configured "Egress Default Deny" in our first policy.
 
 
 ## Apply new rule that allows access to cilium.io
