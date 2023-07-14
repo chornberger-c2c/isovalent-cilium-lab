@@ -33,7 +33,7 @@ cilium connectivity test
 ```
 => this creates namespace cilium-test which we will use later on!
 
-## Verify that all outgoing requests work
+## Verify that outgoing requests work
 
 We test the connection from the first pod in namespace cilium-test to https://cilium.io and get a positive return code.
 
@@ -94,7 +94,7 @@ curl: (28) Connection timeout after 5001 ms
 command terminated with exit code 28
 hubble observe --output jsonpb --last 1000  > backend-cilium-io.json
 ```
-=> the connection won't work, as we configured "Egress Default Deny" in our policy
+=> the connection to https://cilium.io won't work, as we configured "Egress Default Deny" in our first policy.
 
 
 ## Apply new rule that allows access to cilium.io
@@ -132,6 +132,7 @@ or go to https://editor.cilium.io and do it manually
 ![upload flows and add rule](pictures/editor-cilium-io-3.png)
 
 * "Flows upload"
+* "Upload flows"
 * "Add rule"
 * "Download" 
 
@@ -149,10 +150,10 @@ kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https
 curl: (28) Connection timeout after 5001 ms
 command terminated with exit code 28
 ```
-=> timeout indicates that the connection doesn't work
+=> Timeout indicates that the connection to https://kubernetes.io doesn't work, as of "Egress Default Deny".
 
 ```
 kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https://cilium.io | head -1
 HTTP/2 200
 ```
-=> positive return code shows that the connection works
+=> Positive return code shows that the connection to https://cilium.io works, as of our applied policy.
