@@ -1,4 +1,6 @@
-## CLI
+# Hubble Installation
+
+## CLI Tool
 
 ```shell
 export HUBBLE_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/hubble/master/stable.txt)
@@ -18,21 +20,21 @@ cilium hubble ui
 
 ## Commands
 
-status
+- status
 
 ```shell
 hubble status
 hubble list nodes
 ```
 
-observe
+- observe
 
 ```shell
 hubble observe –namespace backend –protocol dns
 hubble observe –namespace frontend –http-path jobs
 ```
 
-output flows as json
+- output flows as json
 
 ```shell
 hubble observe -o jsonpb --last 1000 --follow | tee -a flows.json

@@ -1,4 +1,6 @@
-## CLI installation
+# Kind Installation
+
+## CLI Tool
 
 ```shell
 # see https://kind.sigs.k8s.io/docs/user/quick-start#installation
@@ -15,16 +17,15 @@ mv kind ~/bin
 ```shell
 curl -Lo cluster.yml https://raw.githubusercontent.com/chornberger-c2c/isovalent-cilium-lab/main/kind/cluster.yml
 kind create cluster --name cilium --config cluster.yml
+```
+
+## Test
+
+```shell
 kubectl get nodes
 kubectl get all 
 kubectl get pods -A
 kubectl config current-context
-```
-
-## Kubeconfig
-
-```shell
-kind --name cilium get kubeconfig >> ~/.kube/config
 ```
 
 ## Documentation

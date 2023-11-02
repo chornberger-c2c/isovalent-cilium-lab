@@ -1,4 +1,6 @@
-## CLI
+# Cilium installation
+
+## CLI Tool
 
 ```shell
 curl -L --remote-name-all https://github.com/cilium/cilium-cli/releases/latest/download/cilium-linux-amd64.tar.gz\{,.sha256sum\}
@@ -19,13 +21,13 @@ cilium connectivity test
 
 ## Commands
 
-get cilium endpoints
+- get cilium endpoints
 
 ```shell
 kubectl get cep -A 
 ```
 
-get cilium network policies
+- get cilium network policies
 
 ```shell
 kubectl get ciliumnetworkpolicy.cilium.io -A
