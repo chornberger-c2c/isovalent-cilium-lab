@@ -20,21 +20,21 @@ cilium hubble ui
 
 ## Commands
 
-- status
+Status
 
 ```shell
 hubble status
 hubble list nodes
 ```
 
-- observe
+Observe
 
 ```shell
 hubble observe –namespace backend –protocol dns
 hubble observe –namespace frontend –http-path jobs
 ```
 
-- output flows as json
+Output flows as json
 
 ```shell
 hubble observe -o jsonpb --last 1000 --follow | tee -a flows.json
