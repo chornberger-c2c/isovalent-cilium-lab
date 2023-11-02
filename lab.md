@@ -8,7 +8,7 @@ If not done already, please follow the instructions to install [kind](kind.md).
 
 ### Outcome
 
-You will have a local Kubernetes cluster, running inside a container.
+You will have a local Kubernetes cluster with three nodes, running inside three containers.
 
 ```shell
 curl -Lo cluster.yml https://raw.githubusercontent.com/chornberger-c2c/isovalent-cilium-lab/main/kind/cluster.yml
