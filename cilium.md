@@ -21,13 +21,13 @@ cilium connectivity test
 
 ## Commands
 
-- get cilium endpoints
+Get cilium endpoints
 
 ```shell
 kubectl get cep -A 
 ```
 
-- get cilium network policies
+Get cilium network policies
 
 ```shell
 kubectl get ciliumnetworkpolicy.cilium.io -A
