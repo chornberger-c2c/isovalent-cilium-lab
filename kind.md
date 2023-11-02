@@ -16,7 +16,7 @@ mv kind ~/bin
 
 ```shell
 curl -Lo cluster.yml https://raw.githubusercontent.com/chornberger-c2c/isovalent-cilium-lab/main/kind/cluster.yml
-kind create cluster --name cilium --config kind/cluster.yml
+kind create cluster --name cilium --config cluster.yml
 ```
 
 ## Test
