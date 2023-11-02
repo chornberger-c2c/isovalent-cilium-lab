@@ -24,7 +24,7 @@ kubectl config current-context
 ## Kubeconfig
 
 ```shell
-kind get kubeconfig >> ~/.kube/config
+kind --name cilium get kubeconfig >> ~/.kube/config
 ```
 
 ## Documentation
