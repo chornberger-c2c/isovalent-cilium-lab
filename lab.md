@@ -8,7 +8,7 @@ If not done already, please follow the instructions to install [kind](kind.md).
 
 ### Outcome
 
-You will have a local Kubernetes cluster with three nodes, running inside three containers.
+You will have a local Kubernetes cluster with four nodes, running inside four containers.
 
 ```shell
 curl -Lo cluster.yml https://raw.githubusercontent.com/chornberger-c2c/isovalent-cilium-lab/main/kind/cluster.yml
@@ -85,7 +85,7 @@ or go to https://editor.cilium.io and do it manually
 Apply locally
 
 ```shell
-kubectl apply -f cilium-test.yaml 
+kubectl apply -f https://raw.githubusercontent.com/chornberger-c2c/isovalent-cilium-lab/main/cilium-network-policies/egress-default-deny.yml
 ```
 
 Observe the change
@@ -142,7 +142,7 @@ or go to https://editor.cilium.io and do it manually
 Apply locally
 
 ```shell
-kubectl apply -f cilium-test-2.yaml
+kubectl apply -f https://raw.githubusercontent.com/chornberger-c2c/isovalent-cilium-lab/main/cilium-network-policies/allow-cilium-io.yml
 ```
 
 ## Verify
