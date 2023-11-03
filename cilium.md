@@ -5,7 +5,8 @@
 ```shell
 curl -L --remote-name-all https://github.com/cilium/cilium-cli/releases/latest/download/cilium-linux-amd64.tar.gz\{,.sha256sum\}
 sha256sum --check cilium-linux-amd64.tar.gz.sha256sum
-tar xzvfC cilium-linux-amd64.tar.gz ~/bin/
+tar xfz cilium-linux-amd64.tar.gz
+mv cilium ~/bin
 ```
 
 ## Setup
