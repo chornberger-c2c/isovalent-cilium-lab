@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.1](https://www.github.com/chornberger-c2c/isovalent-cilium-lab/compare/v0.1.0...v0.1.1) (2023-11-16)
+
+
+### Bug Fixes
+
+* **docs:** move hubble jobs to background ([ffe781a](https://www.github.com/chornberger-c2c/isovalent-cilium-lab/commit/ffe781a932a2f764af9da8c33f6bb53dc6428c85))
+
 ## 0.1.0 (2023-11-03)
 
 
