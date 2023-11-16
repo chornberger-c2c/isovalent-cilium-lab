@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.2](https://www.github.com/chornberger-c2c/isovalent-cilium-lab/compare/v0.1.1...v0.1.2) (2023-11-16)
+
+
+### Bug Fixes
+
+* change networkpolicy editor URL ([555d1fc](https://www.github.com/chornberger-c2c/isovalent-cilium-lab/commit/555d1fc6d12ea6b81cd6e8a29ad799b72d984444))
+
 ### [0.1.1](https://www.github.com/chornberger-c2c/isovalent-cilium-lab/compare/v0.1.0...v0.1.1) (2023-11-16)
 
 
