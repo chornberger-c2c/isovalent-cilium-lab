@@ -69,7 +69,7 @@ spec:
               - matchPattern: "*"
 ```
 
-or go to https://editor.cilium.io and do it manually
+or go to https://editor.networkpolicy.io/ and do it manually
 
 ![create policy](pictures/editor-cilium-io-1.png)
 
