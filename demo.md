@@ -1,4 +1,4 @@
-# Demo for IT Tage 2023
+# Demo Session
 
 ## Prerequisites for local cluster with kind
 
