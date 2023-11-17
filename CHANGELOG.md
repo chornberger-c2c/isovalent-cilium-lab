@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.1](https://www.github.com/chornberger-c2c/isovalent-cilium-lab/compare/v0.3.0...v0.3.1) (2023-11-17)
+
+
+### Bug Fixes
+
+* Update demo.md ([99caba6](https://www.github.com/chornberger-c2c/isovalent-cilium-lab/commit/99caba61d3973926dd0f20dac7d6d124e083d7ba))
+
 ## [0.3.0](https://www.github.com/chornberger-c2c/isovalent-cilium-lab/compare/v0.2.0...v0.3.0) (2023-11-17)
 
 
