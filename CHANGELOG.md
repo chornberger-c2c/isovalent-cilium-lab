@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/chornberger-c2c/isovalent-cilium-lab/compare/v0.2.0...v0.3.0) (2023-11-17)
+
+
+### Features
+
+* add star wars demo ([b3d5c4f](https://www.github.com/chornberger-c2c/isovalent-cilium-lab/commit/b3d5c4f624854a360dfe1c5125d56d2ccf60c822))
+
 ## [0.2.0](https://www.github.com/chornberger-c2c/isovalent-cilium-lab/compare/v0.1.2...v0.2.0) (2023-11-17)
 
 
