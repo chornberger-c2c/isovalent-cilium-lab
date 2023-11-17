@@ -71,3 +71,51 @@ kubectl -n cilium-test exec -ti ${BACKEND} -- curl -Ik --connect-timeout 5 https
 # Observe traffic to cilium.io
 hubble observe  --from-pod cilium-test/"$BACKEND"
 ```
+
+## Star Wars Demo
+
+### Setup deployments, pods, services
+
+```shell
+kubectl create -f https://raw.githubusercontent.com/cilium/cilium/1.14.4/examples/minikube/http-sw-app.yaml
+```
+
+### Check Access
+
+```shell
+kubectl exec xwing -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+kubectl exec tiefighter -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+```
+
+### Apply L3/L4 Policy
+
+```shell
+kubectl create -f https://raw.githubusercontent.com/cilium/cilium/1.14.4/examples/minikube/sw_l3_l4_policy.yaml
+```
+
+### Check Access
+
+```shell
+kubectl exec tiefighter -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+kubectl exec xwing -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+```
+
+### Check L7-aware Policy
+
+```shell
+kubectl exec tiefighter -- curl -s -XPUT deathstar.default.svc.cluster.local/v1/exhaust-port
+```
+
+### Apply L7-aware Policy
+
+```shell
+kubectl apply -f https://raw.githubusercontent.com/cilium/cilium/1.14.4/examples/minikube/sw_l3_l4_l7_policy.yaml
+```
+
+### Check Access
+
+```shell
+kubectl exec tiefighter -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+kubectl exec tiefighter -- curl -s -XPUT deathstar.default.svc.cluster.local/v1/exhaust-port
+kubectl exec xwing -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
+```
