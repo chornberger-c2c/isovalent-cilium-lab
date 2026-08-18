@@ -1,6 +1,8 @@
+
+
 # Quickstart to Cilium
 1. [About](#about)
-2. [What problem does Cilium solve](#what-problem-does-cilium-solve)
+2. [What problem does Cilium solve?](#what-problem-does-cilium-solve)
 3. [Lab Quickstart](#lab-quickstart)
 4. [Reference](#reference)
 
